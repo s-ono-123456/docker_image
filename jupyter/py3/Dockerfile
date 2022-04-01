@@ -1,7 +1,5 @@
-﻿FROM python:3.9.7-buster
+FROM python:3.9.12-slim-buster
 ARG DEBIAN_FRONTEND=noninteractive
-
-COPY ./requirements.txt requirements.txt
 
 # パッケージの追加とタイムゾーンの設定
 # 必要に応じてインストールするパッケージを追加してください
@@ -15,5 +13,6 @@ ENV TZ=Asia/Tokyo
 
 # JupyterLab関連のパッケージ（いくつかの拡張機能を含む）
 # 必要に応じて、JupyterLabの拡張機能などを追加してください
+COPY ./requirements.txt requirements.txt
 RUN python3 -m pip install --upgrade pip \
 &&  pip install --no-cache-dir -r requirements.txt
