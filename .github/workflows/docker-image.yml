@@ -18,4 +18,5 @@ jobs:
       run: |
         ls -l
         pwd
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        cd ./jupyter/py3/
+        docker build . --file Dockerfile --tag jupyter:$(date +%s)
