@@ -1,0 +1,50 @@
+﻿### JupyterLab関連のパッケージ（いくつかの拡張機能を含む）   ###
+### 必要に応じて、JupyterLabの拡張機能などを追加してください ###
+black
+jupyterlab
+jupyterlab_code_formatter
+jupyterlab-git
+lckr-jupyterlab-variableinspector
+jupyterlab_widgets
+ipywidgets
+import-ipynb
+
+### 基本パッケージ  ###
+# Pythonでよく利用する基本的なパッケージです
+# JupyterLabの動作には影響しないので、必要に応じてカスタマイズしてください
+numpy
+pandas
+pandas-datareader
+scipy
+scikit-learn
+pycaret
+matplotlib
+matplotlib-inline
+japanize_matplotlib
+mlxtend
+seaborn
+plotly
+requests
+beautifulsoup4
+Pillow
+opencv-python
+
+### 機械学習系パッケージ ###
+pydeps
+graphviz
+pandas_profiling
+shap
+umap
+xgboost
+lightgbm
+keras-nightly
+Keras-Preprocessing
+scikit-image
+tensorboard
+tensorboard-data-server
+tensorboard-plugin-wit
+tensorflow
+tensorflow-estimator
+pydse
+
+### その他パッケージ ###
