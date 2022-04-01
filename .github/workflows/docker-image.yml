@@ -13,10 +13,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: |
-        ls -l
-        pwd
-        cd ./jupyter/py3/
-        docker build . --file Dockerfile --tag jupyter:$(date +%s)
+    - name: Check out the repo
+      uses: actions/checkout@v3
+      
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        
+
+    - name: Extract metadata for Docker
+      id: meta
+      uses: docker/metadata-action@v3
+      with:
+        images: sono123456/jupyter
+        flavor: latest=true
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: ./jupyter/py3
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
