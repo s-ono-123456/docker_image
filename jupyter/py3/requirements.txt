@@ -1,9 +1,8 @@
-﻿### JupyterLab関連のパッケージ（いくつかの拡張機能を含む）   ###
+### JupyterLab関連のパッケージ（いくつかの拡張機能を含む）   ###
 ### 必要に応じて、JupyterLabの拡張機能などを追加してください ###
 black
 jupyterlab
 jupyterlab_code_formatter
-jupyterlab-git
 lckr-jupyterlab-variableinspector
 jupyterlab_widgets
 ipywidgets
@@ -27,7 +26,6 @@ plotly
 requests
 beautifulsoup4
 Pillow
-opencv-python
 
 ### 機械学習系パッケージ ###
 pydeps
@@ -37,14 +35,17 @@ shap
 umap
 xgboost
 lightgbm
-keras-nightly
-Keras-Preprocessing
-scikit-image
+
+# ディープラーニング系パッケージ
 tensorboard
 tensorboard-data-server
 tensorboard-plugin-wit
 tensorflow
 tensorflow-estimator
+# 時系列モデルのライブラリ
 pydse
+# 画像処理系を行うのであれば追加する
+# opencv-python
+# scikit-image
 
 ### その他パッケージ ###
