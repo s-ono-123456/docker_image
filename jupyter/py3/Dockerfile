@@ -1,4 +1,4 @@
-FROM python:3.8.13-slim-buster
+FROM python:3.9.7-buster
 ARG DEBIAN_FRONTEND=noninteractive
 
 # パッケージの追加とタイムゾーンの設定
