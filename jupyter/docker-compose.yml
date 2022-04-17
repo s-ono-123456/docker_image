@@ -31,3 +31,19 @@ services:
     #       devices:
     #         - capabilities:
     #           - gpu
+  tensorboard:
+    image: tensorflow/tensorflow
+    restart: always
+    # /workspace/logsにTensorBoardで読み込ませるログファイルがある前提とする。
+    entrypoint: >
+      tensorboard --logdir=/workspace/logs
+      --bind_all
+    expose:
+      - "6006"
+    # ホストPCのlocalhost:6006とコンテナの6006番ポートを対応させる。
+    # localhost:6006でTensorBoardにアクセスできる。
+    ports:
+      - "127.0.0.1:6006:6006"
+    volumes:
+      - ./py3/root_jupyter:/root/.jupyter
+      - ./workspace:/workspace

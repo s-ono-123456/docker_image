@@ -8,6 +8,7 @@ if ""%DCPS%%""=="""" (goto __LAUNCH__) else (goto __SHUTDOWN__)
 echo Launch...
 docker-compose build
 start http://localhost:8888
+start http://localhost:8888
 docker-compose up
 goto __END__
 
